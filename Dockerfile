@@ -13,8 +13,6 @@ ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
 # Copying files to the container
 COPY ./monitoring_web_application/. .
 COPY ./requirements.txt .
-COPY ./entrypoint.py .
-COPY ./runserver.py .
 
 # Commands to be executed
 RUN apk update \
@@ -27,3 +25,6 @@ npm \
 yarn \
 && python -m pip install -U pip \ 
 && python -m pip install -r requirements.txt --use-feature=2020-resolver
+
+# Entrypoint
+ENTRYPOINT [ "python", "/usr/src/app/entrypoint.py" ]
