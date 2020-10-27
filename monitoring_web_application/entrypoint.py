@@ -18,8 +18,8 @@ if (database == "postgres"):
     print("PostgreSQL started")
     time.sleep(1)
     print("Iniciando servicios...")
-    print("Migrando base de datos")
+    """ print("Migrando base de datos")
     os.system(migrate)
-    time.sleep(1)
+    time.sleep(1) """
     print("Iniciando servidor de pruebas Django")
     os.system(runserver)
