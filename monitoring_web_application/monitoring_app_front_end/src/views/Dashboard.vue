@@ -1,6 +1,6 @@
 <template>
   <div class="about">
-    <p>Hola a todos!</p>
+    <router-link to="/">inicio</router-link>
     <MessageApp />
   </div>
 </template>
@@ -9,7 +9,7 @@
 import MessageApp from "@/components/MessageApp.vue";
 
 export default {
-  name: "About",
+  name: "Dashboard",
   components: {
     MessageApp
   }
