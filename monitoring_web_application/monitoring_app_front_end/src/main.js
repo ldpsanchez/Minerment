@@ -4,6 +4,7 @@ import router from "./router";
 import store from "./store";
 import { createProvider } from "./vue-apollo";
 import vuetify from "./plugins/vuetify";
+
 import "@/styles/styles.scss";
 
 Vue.config.productionTip = false;
@@ -13,7 +14,5 @@ new Vue({
   store,
   apolloProvider: createProvider(),
   vuetify,
-  render: (h) => {
-    return h(App);
-  },
+  render: application => application(App)
 }).$mount("#app");

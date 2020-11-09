@@ -1,6 +1,36 @@
 @import "ress";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;1,300&display=swap');
+@import "variables";
 
-.v-app {
-    font-family: 'Poppins', sans-serif !important;
+//import custom fonts
+
+@font-face {
+    font-family: "PoppinsBold";
+    src: url("../assets/fonts/Poppins-Bold.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PoppinsRegular";
+    src: url("../assets/fonts/Poppins-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PoppinsSemiBold";
+    src: url("../assets/fonts/Poppins-SemiBold.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "PoppinsMedium";
+    src: url("../assets/fonts/Poppins-Medium.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+.v-application {
+    font-family: "Poppins", sans-serif !important;
 }

@@ -1,9 +1,7 @@
 <template>
-    <v-container fluid ma-0 pa-0 class="d-flex flex-row fill-height">
-  <v-row
-    class="fill-height"
-  >
-    <v-col
+  <v-container fluid ma-0 pa-0 class="fill-height">
+    <v-row class="fill-height">
+      <v-col
         xl="7"
         cols="7"
         class="d-flex flex-column justify-center align-center pa-0 ma-0"
@@ -13,8 +11,20 @@
       <v-col 
         xl="5"
         cols="5" 
-        class="d-flex flex-column justify-center align-center pa-0 ma-0">
-        <Login></Login>
+        class="d-flex justify-center align-center pa-0 ma-0"
+      >
+        <v-row class="d-flex flex-row" no-gutters>
+          <v-col cols="12">
+            <div class="container-image">
+            <v-img src="@/assets/minerment_logo.svg"></v-img>
+          </div>
+          </v-col>
+        </v-row>
+        <v-row no-gutters>
+          <v-col cols="12">
+            <Login></Login>
+          </v-col>
+        </v-row>
       </v-col>
   </v-row>
   </v-container>
@@ -30,6 +40,20 @@ export default {
   components: {
     Login,
     Carousel
+  },
+  data: () => {
+    return {
+      data: {
+        src: require("@/assets/minerment_logo.svg")
+      }
+    }
   }
 };
 </script>
+
+<style lang="scss">
+.container-image {
+  height: 188px;
+  width: 100%;
+}
+</style>
