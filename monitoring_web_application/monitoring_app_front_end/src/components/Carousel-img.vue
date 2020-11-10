@@ -3,7 +3,7 @@
     :show-arrows="false" 
     hide-delimiters 
     cycle
-    height="100%"
+    style="height: 100vh; max-height: 100%;"
   >
     <v-carousel-item
       v-for="(item, i) in images"
@@ -28,3 +28,10 @@ export default {
   }
 };
 </script>
+
+<style lang="scss">
+.v-image {
+  height: 100% !important;
+}
+
+</style>

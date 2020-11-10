@@ -23,10 +23,13 @@
       label="password"
       placeholder="enter your password"
       :rules="passwordRules"
+      :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'"
+      :type="show1 ? 'text' : 'password'"
+      @click:append="show1 = !show1"
       class="mb-10"
       ></v-text-field>
       <v-btn width="260" height="60" class="button-login" color="#070F26" @click="Saludar(`hola`, $event)">Login</v-btn>
-      <router-link to="/dashboard" class="button-link">forgot password?</router-link>
+      <router-link :to="{ name: `registration` }" class="button-link">forgot password?</router-link>
     </v-form>
     </v-card-text>
   </v-card>
@@ -38,6 +41,7 @@ export default {
   data: function() {
     return {
       title: "prueba de titulo",
+      show1: false,
       form: {
         subtitle: "prueba de subtitulo"
       }
