@@ -109,6 +109,9 @@ export default {
   }
 }
 
+.v-input {
+  width: 400px;
+}
 .button-login {
   color: white !important;
   span {

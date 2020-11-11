@@ -24,7 +24,6 @@
           fluid
           class="pa-0"
         >
-
           <v-row 
             no-gutters
             class="align-self-start pa-0"
@@ -34,7 +33,7 @@
             >
               <div class="logo-container">
                 <div class="logo-img">
-                  <img :src="img.src" alt="">
+                  <img :src="data.src" alt="">
                 </div>
                 <div class="logo-text">
                   <p class="ma-0">minerment</p>
@@ -70,7 +69,7 @@ export default {
   },
   data: () => {
     return {
-      img: {
+      data: {
         src: require("@/assets/minerment_logo.svg")
       }
     }
