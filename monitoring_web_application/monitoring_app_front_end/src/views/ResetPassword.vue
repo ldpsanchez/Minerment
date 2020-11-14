@@ -101,8 +101,9 @@ export default {
 }
 
 .logo-img {
-  height: 100%;
-  width: 50px;
+  height: 72%;
+  width: 40px;
+  align-self: flex-end;
 }
 
 .logo-img > img {

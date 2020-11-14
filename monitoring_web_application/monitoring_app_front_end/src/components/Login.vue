@@ -28,8 +28,25 @@
       @click:append="show1 = !show1"
       class="mb-10"
       ></v-text-field>
-      <v-btn width="260" height="60" class="button-login" color="#070F26" @click="Saludar(`hola`, $event)">Login</v-btn>
-      <router-link :to="{ name: `registration` }" class="button-link">forgot password?</router-link>
+      <v-btn 
+        width="260"
+        height="60"
+        class="button-login"
+        color="#070F26"
+        @click="Saludar(`hola`, $event)"
+        :to="{ name: btnLoginLink }"
+      >
+        login
+      </v-btn>
+      <v-btn
+        width="260"
+        height="60"
+        class="button-reset"
+        text
+        :to="{ name: btnResetLink }"
+      >
+        reset password
+      </v-btn>
     </v-form>
     </v-card-text>
   </v-card>
@@ -40,6 +57,8 @@ export default {
   name: "Login",
   data: function() {
     return {
+      btnLoginLink: "dashboard",
+      btnResetLink: "resetPassword",
       title: "prueba de titulo",
       show1: false,
       form: {
@@ -121,11 +140,9 @@ export default {
   }
 }
 
-.button-link {
+.button-reset {
   font-family: "PoppinsMedium", Arial, Helvetica, sans-serif;
   text-transform: capitalize;
-  text-decoration: none;
-  color: #070F26 !important;
   margin-top: 20px;
 }
 </style>
