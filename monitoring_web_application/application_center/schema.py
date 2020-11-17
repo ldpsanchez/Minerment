@@ -5,11 +5,10 @@ type_defs = """
         hello: String!
     }
 """
-
 query = QueryType()
 
 @query.field("hello")
 def resolve_hello(*_):
-    return "Hello world!"
+    return "amo mi vida!"
 
 schema = make_executable_schema(type_defs, query)

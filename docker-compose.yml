@@ -13,24 +13,24 @@ services:
       - databases
 
   databases:
-    image: postgres:12.4-alpine
+    image: postgres:12.5-alpine
     ports:
-      - 8083:5432
+      - "8083-8084:5432-5433"
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_USER=admin
-      - POSTGRES_PASSWORD=admin
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
       - POSTGRES_DB=cryptocurrency_app_dev
   
   pgadmin:
-    image: dpage/pgadmin4:4.26
+    image: dpage/pgadmin4:4.28
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
-      - PGADMIN_DEFAULT_PASSWORD=admin
+      - PGADMIN_DEFAULT_EMAIL=postgres@postgres.com
+      - PGADMIN_DEFAULT_PASSWORD=postgres
       - PGADMIN_LISTEN_PORT=80
     ports:
-      - 8084:80
+      - 8085:80
     depends_on:
       - databases
     volumes: 

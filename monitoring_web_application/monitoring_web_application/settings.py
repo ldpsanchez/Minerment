@@ -37,8 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ariadne.contrib.django',
-    'strawberry.django'
+    'ariadne.contrib.django'
 ]
 
 MIDDLEWARE = [
@@ -84,11 +83,11 @@ DATABASES = {
         "HOST": os.getenv("SQL_HOST", "localhost"),
         "PORT": os.getenv("SQL_PORT", "5432")
     },
-    "miners_data": {
+    "miner_data": {
         "ENGINE": os.getenv("SQL_ENGINE", "django.db.backends.sqlite3"),
         "NAME": 'miners_data',
-        "USER": os.getenv("SQL_USER", "user"),
-        "PASSWORD": 'postgres',
+        "USER": 'admin',
+        "PASSWORD": 'admin',
         "HOST": os.getenv("SQL_HOST", "localhost"),
         "PORT": os.getenv("SQL_PORT", "5432")
     }
