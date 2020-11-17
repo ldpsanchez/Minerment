@@ -11,10 +11,10 @@ services:
       - ./dev.env
     depends_on:
       - databases
+      - pgadmin
 
   databases:
     image: postgres:12.5-alpine
-    restart: always
     ports:
       - 8083:5432
     volumes:
@@ -26,7 +26,6 @@ services:
   
   pgadmin:
     image: dpage/pgadmin4:4.28
-    restart: always
     environment:
       - PGADMIN_DEFAULT_EMAIL=admin@xubuntu.com
       - PGADMIN_DEFAULT_PASSWORD=admin

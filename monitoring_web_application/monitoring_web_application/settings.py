@@ -83,7 +83,7 @@ DATABASES = {
         "HOST": os.getenv("SQL_HOST", "localhost"),
         "PORT": os.getenv("SQL_PORT", "5432")
     },
-    "miner_data": {
+    "miners_data": {
         "ENGINE": os.getenv("SQL_ENGINE", "django.db.backends.sqlite3"),
         "NAME": 'data_of_miners',
         "USER": os.getenv("SQL_USER", "user"),

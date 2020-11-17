@@ -20,8 +20,10 @@ RUN apt-get update \
 libpq-dev \
 python3-dev \
 build-essential \
+netcat \
 && apt-get install -y aptitude \
 && pip install -U pip \ 
 && pip install -r requirements.txt
+
 # Entrypoint
 ENTRYPOINT [ "python", "/usr/src/app/entrypoint.py" ]
