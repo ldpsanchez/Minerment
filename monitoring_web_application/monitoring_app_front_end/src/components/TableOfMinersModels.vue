@@ -51,14 +51,14 @@
           >
             {{iteradorRow6}}
           </td>
-          <tr>
-            <td
-              v-for="iteradorRow7 in tableSimple.tableData"
-              :key="iteradorRow7"
-            >
-              {{iteradorRow7}}
-            </td>
-          </tr>
+        </tr>
+        <tr>
+          <td
+            v-for="iteradorRow7 in tableSimple.tableData"
+            :key="iteradorRow7"
+          >
+            {{iteradorRow7}}
+          </td>
         </tr>
       </tbody>
     </v-simple-table>
