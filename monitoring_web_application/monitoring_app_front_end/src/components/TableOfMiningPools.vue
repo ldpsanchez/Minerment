@@ -60,12 +60,22 @@
             {{iteradorRow6}}
           </td>
         </tr>
+        <tr
+          v-for="iterador in countries.Country"
+          :key="iterador.id"
+        >
+          <td>{{iterador.name}}</td>
+          <td>{{iterador.capital}}</td>
+          <td>{{iterador.area}}</td>
+        </tr>
       </tbody>
     </v-simple-table>
   </v-container>
 </template>
 
 <script>
+import gql from 'graphql-tag';
+
 export default {
   name: "TableOfMiningPools",
   data: () => {
@@ -88,7 +98,18 @@ export default {
         }
       }
     }
-  }
+  },
+  apollo: {
+      countries: {
+        query: gql`query getCountries{
+          Country {
+            name
+            capital
+            area
+          }
+        }`
+      }
+    }
 }
 </script>
 
