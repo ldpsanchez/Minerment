@@ -46,9 +46,8 @@ export default {
 <style lang="scss">
 .title-of-graph-chart {
   font-family: "PoppinsSemiBold";
-  font-size: 20px;
-  color: black;
+  font-size: 25px;
   text-transform: capitalize;
+  color: black;
 }
-
 </style>

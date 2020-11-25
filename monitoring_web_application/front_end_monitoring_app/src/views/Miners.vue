@@ -1,20 +1,12 @@
 <template>
   <v-app>
-    <v-container
-      fluid
-      fill-height
-      class="flex-grow-1"
-    >
+    <v-container fluid fill-height class="flex-grow-1">
       <v-row>
-        <v-row
-          no-gutters
-        >
-          <p>miner's list</p>
+        <v-row no-gutters>
+          <p class="title-of-miners-view">miner's list</p>
         </v-row>
       </v-row>
-      <v-row
-        no-gutters
-      >
+      <v-row no-gutters>
         <v-row>
           <MinersStats></MinersStats>
         </v-row>
@@ -27,19 +19,23 @@
 </template>
 
 <script>
-import MinersStats from "@/components/MinersStats"
+import MinersStats from "@/components/GeneralInfoAboutTheMiner";
 import GeneralTableOfMiners from "@/components/GeneralTableOfMiners";
 
 export default {
   name: "Miners",
   components: {
     MinersStats,
-    GeneralTableOfMiners
-  }
-
-}
+    GeneralTableOfMiners,
+  },
+};
 </script>
 
-<style>
-
+<style lang="scss">
+.title-of-miners-view {
+  font-family: "PoppinsSemiBold";
+  font-size: 30px;
+  text-transform: capitalize;
+  color: black;
+}
 </style>
