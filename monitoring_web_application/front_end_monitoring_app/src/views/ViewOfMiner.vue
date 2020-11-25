@@ -1,9 +1,9 @@
 <template>
-  <v-container>
+  <v-container fluid>
     <v-row>
       <div class="d-flex flex-row header-view">
         <v-col class="d-flex align-center pa-0">
-          <v-btn class="button-go-back pr-2" icon>
+          <v-btn class="button-go-back pr-2" icon link :to="{name:'miners'}">
             <v-icon color="black" size="30px" class="icon-go-back">mdi-arrow-left</v-icon>
           </v-btn>
         </v-col>
@@ -21,16 +21,26 @@
     <v-row>
       <GeneralInfoMiner></GeneralInfoMiner>
     </v-row>
+    <v-row>
+      <v-col>
+        <HashrateGraphOfMiner></HashrateGraphOfMiner>
+      </v-col>
+      <v-col>
+        <p>columna</p>
+      </v-col>
+    </v-row>
   </v-container>
 </template>
 
 <script>
 import GeneralInfoMiner from "@/components/GeneralInfoAboutTheMiner";
+import HashrateGraphOfMiner from "@/components/HashrateGraphOfMiner";
 
 export default {
   name: "ViewOfMiner",
   components: {
-    GeneralInfoMiner
+    GeneralInfoMiner,
+    HashrateGraphOfMiner
   }
 };
 </script>
