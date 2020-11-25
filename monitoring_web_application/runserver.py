@@ -1,6 +1,6 @@
 import os
 
-directory = "monitoring_app_front_end"
+directory = "front_end_monitoring_app"
 runserver = "yarn serve"
 
 os.chdir(directory)
