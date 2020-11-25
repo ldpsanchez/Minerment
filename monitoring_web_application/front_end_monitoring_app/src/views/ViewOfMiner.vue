@@ -28,6 +28,8 @@
       </v-col>
       <v-col>
         <MinersPoolInfoCard></MinersPoolInfoCard>
+        <MinersPoolInfoCardAdd></MinersPoolInfoCardAdd>
+        <MinersHardwareInfoTable></MinersHardwareInfoTable>
       </v-col>
     </v-row>
   </v-container>
@@ -38,6 +40,8 @@ import GeneralInfoMiner from "@/components/GeneralInfoAboutTheMiner";
 import HashrateGraphOfMiner from "@/components/HashrateGraphOfMiner";
 import MinersTemperatureChart from "@/components/MinersTemperatureChart";
 import MinersPoolInfoCard from "@/components/MinersPoolInfoCard";
+import MinersPoolInfoCardAdd from "@/components/MinersPoolInfoCardAddOn";
+import MinersHardwareInfoTable from "@/components/MinersHardwareInfoTable";
 
 export default {
   name: "ViewOfMiner",
@@ -45,7 +49,9 @@ export default {
     GeneralInfoMiner,
     HashrateGraphOfMiner,
     MinersTemperatureChart,
-    MinersPoolInfoCard
+    MinersPoolInfoCard,
+    MinersPoolInfoCardAdd,
+    MinersHardwareInfoTable
   }
 };
 </script>
