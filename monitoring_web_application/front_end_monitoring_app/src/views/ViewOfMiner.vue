@@ -27,7 +27,7 @@
         <MinersTemperatureChart></MinersTemperatureChart>
       </v-col>
       <v-col>
-        <p>columna</p>
+        <MinersPoolInfoCard></MinersPoolInfoCard>
       </v-col>
     </v-row>
   </v-container>
@@ -36,14 +36,16 @@
 <script>
 import GeneralInfoMiner from "@/components/GeneralInfoAboutTheMiner";
 import HashrateGraphOfMiner from "@/components/HashrateGraphOfMiner";
-import MinersTemperatureChart from "@/components/MinersTemperatureChart"
+import MinersTemperatureChart from "@/components/MinersTemperatureChart";
+import MinersPoolInfoCard from "@/components/MinersPoolInfoCard";
 
 export default {
   name: "ViewOfMiner",
   components: {
     GeneralInfoMiner,
     HashrateGraphOfMiner,
-    MinersTemperatureChart
+    MinersTemperatureChart,
+    MinersPoolInfoCard
   }
 };
 </script>
