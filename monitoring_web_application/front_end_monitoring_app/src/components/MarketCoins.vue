@@ -6,7 +6,6 @@
           width="200px"
           v-for="(value, key) in response"
           :key="value.id"
-          class="align-center"
         >
           <v-card-title class="pa-0 text-center">
             <p class="text-title-market">{{key}}</p>
@@ -71,6 +70,7 @@ export default {
     this.getImage();
   },
   mounted() {
+    this.callGetDataMarket()
   }
 };
 </script>

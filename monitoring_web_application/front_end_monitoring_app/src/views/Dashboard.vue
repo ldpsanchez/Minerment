@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar app>
+    <v-app-bar app color="white">
       <div class="container-logo d-flex flex-row">
         <div class="contain-img d-flex align-center">
           <img :src="navbarImg" alt="hola" />
@@ -32,9 +32,37 @@
             </v-btn>
           </v-col>
           <v-col>
-            <v-btn icon>
-              <v-icon>mdi-account</v-icon>
-            </v-btn>
+            <v-menu
+              bottom
+              offset-y
+              left
+            >
+              <template
+                v-slot:activator="{on, attrs}"
+              >
+                <v-btn
+                  icon
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  <v-icon>mdi-account</v-icon>
+                </v-btn>
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(value, key) in listItems"
+                  :key="key"
+                  :to="{name: value.link}"
+                >
+                  <v-list-item-icon>
+                    <v-icon>{{value.icon}}</v-icon>
+                  </v-list-item-icon>
+                  <v-list-item-title>
+                    <p class="text-dropdown ma-0">{{value.text}}</p>
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
           </v-col>
         </v-row>
       </div>
@@ -75,6 +103,23 @@ export default {
   name: "Dashboard",
   data: () => {
     return {
+      listItems: [
+        {
+          icon: "mdi-account-settings-outline",
+          text: "setting",
+          link: "settings"
+        },
+        {
+          icon: "mdi-account-cog",
+          text: "user manager",
+          link: "manageUser"
+        },
+        {
+          icon: "mdi-power",
+          text: "logout",
+          link: "home"
+        }
+      ],
       navbarImg: require("@/assets/minerment_logo.svg"),
       drawer: false,
       sizeWidth: 60,
@@ -152,5 +197,11 @@ export default {
 }
 .navbar {
   width: 100vh !important;
+}
+
+.text-dropdown {
+  font-family: "PoppinsMedium";
+  font-size: 15px;
+  text-transform: capitalize;
 }
 </style>

@@ -23,6 +23,7 @@
           >
             <template
               v-slot:item.name="{ item }"
+              :class="stylesText"
             >
               <router-link
                 :to="{name: `viewOfMiner`}"
@@ -40,6 +41,7 @@ export default {
   name: "GeneralTableOfMiners",
   data: () => {
     return {
+      stylesText: "text-link-miners",
       search: "",
       headers: [
         {

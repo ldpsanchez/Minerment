@@ -35,24 +35,24 @@ export default {
         tableTitle: ["miner's model", "Miner's quantity"],
         tableData: [
           {
-            modelMiner: "modelo1",
+            modelMiner: "ADW-34-ME",
             quantity: 23
           },
           {
-            modelMiner: "modelo1",
-            quantity: 23
+            modelMiner: "UHYUN-24",
+            quantity: 30
           },
           {
-            modelMiner: "modelo1",
-            quantity: 23
+            modelMiner: "TADOUTSX",
+            quantity: 16
           },
           {
-            modelMiner: "modelo1",
-            quantity: 23
+            modelMiner: "LJUH-244",
+            quantity: 12
           },
           {
-            modelMiner: "modelo1",
-            quantity: 23
+            modelMiner: "TBAUS-234",
+            quantity: 48
           }
         ]
       }

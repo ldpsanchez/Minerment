@@ -43,7 +43,7 @@
                   <span class="value-info">{{ miners.electriciy }}</span>
                 </div>
                 <div>
-                  <p class="text-info-label color-electrico">electriciy</p>
+                  <p class="text-info-label color-electrico">electricity</p>
                 </div>
               </v-col>
             </v-row>
@@ -57,7 +57,7 @@
             <v-row>
               <v-col>
                 <div>
-                  <span class="value-info">{{hashrate.current}}</span>
+                  <span class="value-info">{{randomFixed}}{{hashrate.current}}</span>
                 </div>
                 <div>
                   <p class="text-info-label color-aquamarine">current</p>
@@ -65,7 +65,7 @@
               </v-col>
               <v-col>
                 <div>
-                  <span class="value-info">{{hashrate.dailyMind}}</span>
+                  <span class="value-info">{{randomFixed}}{{hashrate.dailyMind}}</span>
                 </div>
                 <div>
                   <p class="text-info-label color-red">daily min</p>
@@ -73,7 +73,7 @@
               </v-col>
               <v-col>
                 <div>
-                  <span class="value-info">{{hashrate.dailyMax}}</span>
+                  <span class="value-info">{{randomFixed}}{{hashrate.dailyMax}}</span>
                 </div>
                 <div>
                   <p class="text-info-label color-green">daily max</p>
@@ -125,6 +125,7 @@ export default {
   name: "generalInfo",
   data: () => {
     return {
+      randomFixed: '',
       miners: {
         textTitle: "miners",
         textLabel: ["efficiency", "off", "aloja", "idle"],
@@ -136,9 +137,9 @@ export default {
       },
       hashrate: {
         title: "hashrate",
-        current: 16.43,
-        dailyMind: 125.45,
-        dailyMax: 1235.34,
+        current: "Hs",
+        dailyMind: "Hs",
+        dailyMax: "Hs",
       },
       temperature: {
         title: "temperature",
@@ -148,6 +149,15 @@ export default {
       },
     };
   },
+  created() {
+    setInterval(() => {
+      const min = 0;
+      const max = 100;
+
+      let random = (Math.random() * (+max - +min) + +min)*1
+      this.randomFixed = parseFloat(random).toFixed(2);
+    }, 2000)
+  }
 };
 </script>
 
@@ -190,5 +200,13 @@ export default {
 
 .color-gris {
   color: #BCC6EB;
+}
+
+.text-start {
+  a {
+    text-decoration: none !important;
+  color: black !important;
+  }
+
 }
 </style>

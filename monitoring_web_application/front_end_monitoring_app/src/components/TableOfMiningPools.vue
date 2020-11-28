@@ -20,7 +20,7 @@
           <td class="data-table">{{value.pool}}</td>
           <td class="data-table">{{value.miner}}</td>
           <td class="data-table">{{value.algorithm}}</td>
-          <td class="data-table">{{value.hashrate}}</td>
+          <td class="data-table">{{getRandomNumber}} {{value.hashrate}}</td>
         </tr>
       </tbody>
     </v-simple-table>
@@ -30,34 +30,46 @@
 <script>
 export default {
   name: "TableOfMiningPools",
+  mounted() {
+    setInterval(() => {
+      let numberMax = 80;
+      let numberMin = 10;
+      
+
+      let generateData = (Math.random() * (+numberMax - numberMin) + numberMax) * 3;
+
+      this.getRandomNumber = generateData.toFixed(4);
+    }, 3000)
+  },
   data: () => {
     return {
+      getRandomNumber: '',
       tableSimple: {
         tableTitle: ["pool", "miner", "algorithm", "hashrate"],
         tableData: [
           {
-            pool: "192.168.1.4",
-            miner: "XSWE-341-21D3F4",
+            pool: "12.68.111.43",
+            miner: "XSWE-341",
             algorithm: "btc",
-            hashrate: 1235545.545
+            hashrate: "Hs"
           },
           {
-            pool: "192.168.1.4",
-            miner: "XSWE-341-21D3F4",
-            algorithm: "btc",
-            hashrate: 1235545.545
+            pool: "120.118.12.4",
+            miner: "XSWE-21D3F4",
+            algorithm: "eth",
+            hashrate: "Hs"
           },
           {
-            pool: "192.168.1.4",
-            miner: "XSWE-341-21D3F4",
-            algorithm: "btc",
-            hashrate: 1235545.545
+            pool: "56.168.212.123",
+            miner: "XE-341-21DF4",
+            algorithm: "trx",
+            hashrate: "Hs"
           },
           {
-            pool: "192.168.1.4",
-            miner: "XSWE-341-21D3F4",
-            algorithm: "btc",
-            hashrate: 1235545.545
+            pool: "100.168.1.200",
+            miner: "XSE-31-2134",
+            algorithm: "eos",
+            hashrate: "Hs"
           }
         ]
       }

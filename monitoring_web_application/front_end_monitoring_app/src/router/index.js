@@ -20,6 +20,7 @@ const routes = [
   {
     path: "/dashboard",
     name: "dashboard",
+    redirect: {name: "dashboardMain"},
     component: () => import(/* webpackChunkName: "dashboard" */ "@/views/Dashboard.vue"),
     children: [
       {
@@ -45,7 +46,12 @@ const routes = [
       {
         path: "/view-of-miner",
         name: "viewOfMiner",
-        component: () => import(/* webpackChunkName: "view of miners" */ "@/views/ViewOfMiner")
+        component: () => import(/* webpackChunkName: "viewOfMiner" */ "@/views/ViewOfMiner")
+      },
+      {
+        path: "/manage-user",
+        name: "manageUser",
+        component: () => import(/* webpackChunkName: "manageUser" */ "@/views/ManageUser")
       }
     ]
   }
