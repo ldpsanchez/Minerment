@@ -24,17 +24,48 @@
         </v-card>
       </v-card-text>
     </v-card>
+    <v-card>
+      <v-card-title>
+        <p>tabla getCountries</p>
+      </v-card-title>
+      <v-card-text>
+        <v-simple-table>
+          <template v-slot:default>
+            <thead>
+              <tr>
+                <th>country</th>
+                <th>country</th>
+                <th>country</th>
+                <th>country</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="value of countries" :key="value.id">
+                <td>{{value._id}}</td>
+                <td>{{value.name}}</td>
+                <td>{{value.area}}</td>
+                <td>{{value.capital}}</td>
+              </tr>
+            </tbody>
+          </template>
+        </v-simple-table>
+      </v-card-text>
+    </v-card>
   </v-container>
 </template>
 
 <script>
+import gql from "graphql-tag";
+
 export default {
   name: "AlertRegisterTable",
   data: () => {
     return {
+      countries: [],
+      search: '',
       headers: [
         {
-          text: "date",
+          text: "aloja",
           value: "date"
         },
         {
@@ -59,7 +90,18 @@ export default {
         }
       ]
     }
+  },
+  apollo: {
+    countries: gql` query getCountries {
+      countries: Country {
+        _id
+        name
+        area
+        capital
+      }
+    }`
   }
+
 };
 </script>
 
