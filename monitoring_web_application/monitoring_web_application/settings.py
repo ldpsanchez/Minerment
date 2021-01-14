@@ -75,7 +75,7 @@ WSGI_APPLICATION = 'monitoring_web_application.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'miner_data': {
+    'default': {
         "ENGINE": os.getenv("SQL_ENGINE", "django.db.backends.sqlite3"),
         "NAME": os.getenv("SQL_DATABASE", os.path.join(BASE_DIR, "db.sqlite3")),
         "USER": os.getenv("SQL_USER", "user"),
@@ -83,7 +83,7 @@ DATABASES = {
         "HOST": os.getenv("SQL_HOST", "localhost"),
         "PORT": os.getenv("SQL_PORT", "5432")
     },
-    'default': {
+    'miner_data': {
         "ENGINE": os.getenv("SQL_ENGINE", "django.db.backends.sqlite3"),
         "NAME": 'data_of_miners',
         "USER": os.getenv("SQL_USER", "user"),

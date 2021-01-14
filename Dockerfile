@@ -1,5 +1,5 @@
 # Pulling an official image of python
-FROM python:3.9.0-slim-buster
+FROM python:3.9.1-slim-buster
 
 # Exposing listening port
 EXPOSE 8080
@@ -21,7 +21,10 @@ libpq-dev \
 python3-dev \
 build-essential \
 netcat \
-&& apt-get install -y aptitude \
+aptitude \
+nodejs \
+npm \
+&& npm install -g yarn \
 && pip install -U pip \ 
 && pip install -r requirements.txt
 

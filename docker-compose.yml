@@ -4,7 +4,7 @@ services:
     build: .
     entrypoint: ["python", "/usr/src/app/entrypoint.py"]
     volumes:
-      - ./monitoring_web_application/:/usr/src/app/
+      - ./monitoring_web_application:/usr/src/app/
     ports:
       - "8080-8082:8080-8082"
     env_file:
@@ -25,18 +25,15 @@ services:
       - POSTGRES_DB=monitoring_application_database
   
   pgadmin:
-    image: dpage/pgadmin4:4.28
+    image: dpage/pgadmin4:4.29
     environment:
-      - PGADMIN_DEFAULT_EMAIL=admin@xubuntu.com
+      - PGADMIN_DEFAULT_EMAIL=admin@monitoring_miners.com
       - PGADMIN_DEFAULT_PASSWORD=admin
       - PGADMIN_LISTEN_PORT=80
     ports:
       - 8084:80
     depends_on:
       - databases
-    volumes: 
-      - pgadmin_data:/var/lib/pgadmin/
 
 volumes:
   postgres_data:
-  pgadmin_data:
